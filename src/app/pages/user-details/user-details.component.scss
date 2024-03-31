@@ -1,0 +1,29 @@
+
+@import '/src/styles/variables.scss';
+
+* {
+  font-family: 'Comfortaa', cursive;
+}
+
+.img-container {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 1px 1px 6px rgba(0,0,0,.15);
+  img {
+    width: 100%;
+  }
+}
+
+.content {
+  padding: 1.25rem 0;
+  .name {
+    font-family: 'Playball', cursive;
+    letter-spacing: 1px;
+    font-size: 24px;
+    color: $primaryColor;
+  }
+  .email {
+    font-size: 12px;
+  }
+}

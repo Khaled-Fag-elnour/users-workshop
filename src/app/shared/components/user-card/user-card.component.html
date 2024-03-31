@@ -1,0 +1,9 @@
+
+
+<a class="user" [routerLink]="'/users/'+user?.id+'/user-details'">
+  <div class="content">
+    <img class="user-img" [src]="user?.avatar" alt="">
+    <h6 class="name">{{user?.first_name + ' ' + user?.last_name}}</h6>
+    <p class="mail" [innerHTML]="user?.email | slice:0:200">...</p>
+  </div>
+</a>

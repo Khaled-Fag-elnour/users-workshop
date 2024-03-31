@@ -1,0 +1,22 @@
+
+<app-header (onSearch)="searchUsers($event)"></app-header>
+
+<div class="loading" *ngIf="loading"><span></span></div>
+
+<div class="container my-4" *ngIf="filteredUsers?.length > 0">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center" *ngFor="let u of filteredUsers | paginate : {
+        itemsPerPage: pageSize,
+        currentPage: pageNumber,
+        totalItems: totalRecords
+      };">
+      <app-user-card [user]="u"></app-user-card>
+    </div>
+  </div>
+
+  <pagination-controls class="custom-pagination" (pageChange)="paginate($event)"></pagination-controls>
+</div>
+
+<div class="container my-4" *ngIf="filteredUsers?.length <= 0 && !loading">
+  <h5>Data Not Found</h5>
+</div>
